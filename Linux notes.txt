@@ -1,0 +1,213 @@
+stdout: echo "something"
+
+stdin: read number
+
+assignment: number=5
+
+to find the length of a number
+read n
+l=${#n}
+
+
+basic floating point calculation
+result=$(echo "scale=2; 5.874 * 8 /46" | bc)
+
+arithmetic comparison operators:
+-eq
+-ne
+-lt
+-rt
+-le
+-re
+
+string comparison operator
+=
+!=
+
+
+if condition
+case1
+if [ $operator -eq 12 ]; then
+	commands
+else
+	commands
+fi
+
+case2
+if [ "$input" = "hi" ]; then
+	commands
+else
+	commands
+fi
+
+case3
+if [ $(( input % 2 )) -eq 0 ]; then
+	commands
+else
+	commands
+fi
+case4
+if [ $(( input % 2 )) -eq 0 ] && [ $input -gt 0 ]; then
+	commands
+else
+	commands
+fi
+
+case condition
+
+case $operator in
+	+) command;;
+	-) command;;
+	/) command;;
+	!) command;;
+	*) command;; //default condition
+esac
+
+Loops
+
+1.For loops
+for (( i=0;i<$number;i++ )); do
+	commands;
+done
+
+2. While loops
+while [ $operator -lt 10 ]; do
+	commands;
+done
+
+3. Until loops
+until [ $operator -lt 10 ]; do
+	commands;
+done
+	
+wc:
+To find the length of characters
+wc -c
+To find the number of lines
+wc -l
+
+fold:
+echo "2324" | fold -w1
+o/p: 2
+3
+2
+4
+	
+functions
+#!/bin/bash
+
+# Define a function to add two numbers
+function add_numbers {
+  local num1=$1
+  local num2=$2
+  local sum=$((num1 + num2))
+  echo $sum
+}
+
+# Call the function with two arguments
+result=$(add_numbers 5 10)
+
+# Output the result
+echo "The sum of 5 and 10 is $result"
+
+	
+cut
+The cut -c command is used to extract characters from a string or file based on their position or index.
+
+eg:
+Hello
+World
+how are you
+
+cut -c 3
+
+output
+l
+r
+w
+
+similarly: cut -c 2,7
+cut -c 2-7
+etc...
+
+
+head
+To print first 20 lines from a file: head -n 20
+
+tail
+To print the last 20 lines of a file: tail -n 20
+
+tr
+to change a character
+(int 5*3) -> [int 5*3]
+then : tr '(' '[' | tr ')' ']'
+
+sort
+commands: sort
+sort -r
+sort -n
+sort -nr
+
+uniq
+uniq: This is the basic variant of the command, which removes consecutive duplicate lines from a file or standard input. It only removes duplicate lines that are immediately adjacent to each other.
+
+uniq -c: This variant of the command adds a count of the number of times each line appears in the file or input stream, and only removes consecutive duplicates. The output shows the count of each line, followed by the line itself.
+
+uniq -d: This variant of the command only shows lines that appear more than once in the input.
+
+uniq -u: This variant of the command only shows lines that appear once in the input. This is essentially the opposite of uniq -d.
+
+uniq -i: This variant of the command performs a case-insensitive comparison when determining whether lines are duplicates.
+ 	
+sed:
+sed stands for "stream editor" and is a Unix command-line tool used to perform text transformations on input streams (i.e., text passed through a pipeline or file redirection).
+eg1: Replace all occurrences of "foo" with "bar" in a file:
+sed 's/foo/bar/g' myfile.txt
+case insensitive
+sed -i 's/foo/bar/g' myfile.txt
+
+eg2: Delete all lines that contain the word "password":
+
+sed '/password/d' myfile.txt
+
+eg3: Print only lines containing the word "error":
+sed -n '/error/p' myfile.txt
+
+awk
+awk is a Unix command-line tool used to process and manipulate text files. It is particularly useful for working with structured data, such as tables and columns of data. 
+eg1: Print the first column of a file:
+awk '{print $1}' myfile.txt
+ 
+eg2: Print all fields of a file:
+awk '{print $0}' myfile.txt
+	
+eg3: Print last field of a file:
+awk '{print $NF}' myfile.txt	
+
+eg4:
+By default the field separator is space. If a file has different field separator then
+awk -F ':' '{print $1}'
+ 	
+
+arrays
+#!/bin/bash
+  
+arr=(4 5 21 34 55);//initialization
+echo ${arr[2]}//display
+echo ${arr[@]}//all elements
+
+to read arrays#!/bin/bash
+read -a arr
+echo ${arr[2]}
+
+
+FILE OPERATIONS!
+
+REGEX!
+	
+	
+	
+	
+	
+	
+	

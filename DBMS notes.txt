@@ -1,0 +1,109 @@
+Database: A database is a collection of organized and structured data that is stored and managed in a computer system
+
+DBMS (Database Management System): A Database Management System (DBMS) is software that is used to manage and control access to the data stored in a database. It provides an interface for users to interact with the database, and it ensures that the data is organized, secure, and consistent. Some examples of popular DBMS include Oracle, MySQL, Microsoft SQL Server, and PostgreSQL.
+
+SQL (Structured Query Language): Structured Query Language (SQL) is a programming language that is used by relational database management system to manage and manipulate data in a relational database.
+
+SQL has 5 Sub languages
+
+1. DDL - Data Definition Language - CREATE, ALTER, DROP, TRUNCATE
+2. DML - Data Manipulation Language- INSERT, UPDATE, DELETE
+3. DQL - Data Query Language- SELECT
+4. DCL - Data Control Language- GRANT, REVOKE
+5. TCL - Transaction Control Language- COMMIT, ROLLBACK, SAVEPOINT
+
+
+Constraints:
+1. Primary key
+2. Unique
+3. Not null
+4. Check
+5. Default
+6. Foreign Key
+
+Arithmetic Operators
+<
+>
+<=
+>=
+!=
+=
+
+Special Operators
+1. in 
+SELECT * FROM users WHERE age = 25;
+which is similar to
+SELECT * FROM users WHERE age IN (25, 30, 35);
+In general, you should use the = operator when comparing a single value and the IN operator when comparing a value with a set of values.
+
+2. like
+SELECT * FROM products WHERE name LIKE 'App%';
+This query will return all the products whose name starts with "App".
+
+SELECT * FROM products WHERE name LIKE '%book';
+This query will return all the products whose name ends with "book".
+
+SELECT * FROM products WHERE name NOT LIKE '%apple%';
+This query will return all the products whose name does not contain the word "apple".
+
+3. not like
+The LIKE clause can be combined with the NOT operator to search for patterns that do not match a certain string. 
+SELECT * FROM products WHERE name NOT LIKE '%apple%';
+
+
+//is null
+any
+exists
+not in
+all
+are whose
+between and//
+
+Aggregation functions
+1. count()
+2. sum()
+3. avg()
+4. min()
+5. max()
+
+String functions
+1. concat()
+2. substr() - substr(string, start_index, length)
+3. upper()
+4. lower()
+5. length()
+
+Math functions
+1. power()
+2. round()
+3. ceil()
+4. floor()
+5. abs()
+6. sqrt()
+
+Keys
+1. Primary key
+2. Composite key
+3. Candidate key
+4. Foreign Key
+
+Date
+1. day()
+2. month()
+3. year()
+4. current_date()/ curdate()
+5. timestampdiff()/datediff() - syntax - timestampdiff(year, hiredate, current_date())
+6. current_time()
+7. sysdate() - current date-time
+8. dayname()
+9. addmonth() - syntax - (add_months(current_date(),-1)
+
+Joins
+1. Natural join/ Inner join/ join
+2. Outer join
+	a. Left outer join
+	b. Right outer join
+	c. Full outer join
+3. Self join
+
+* Natural join is same as Inner join
